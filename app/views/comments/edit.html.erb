@@ -1,0 +1,133 @@
+﻿<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <%= render "shared/sidenav" %>
+
+    </div>
+    <div class="col-sm-10">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">评估主机:<%=@comment.course.name%></h3>
+        </div>
+        <div class="panel-body" style="min-height: 450px">
+          <table class="table table-striped table-bordered table-advance table-hover">
+            当前评估主机：<label style="color:red;"><%=@comment.course.name%></label>&nbsp&nbsp&nbsp负责教师：<lable style="color:red;"><%=@comment.course.teacher.name%></lable>&nbsp&nbsp&nbsp&nbsp所属院系：<lable style="color:red;"><%=@comment.course.teacher.department%></lable>
+            </br> </br>
+            <thead>
+            <tr>
+              <th class="active">序号</th>
+              <th class="active">评估内容</th>
+              <th class="active">评分</th>
+            </tr>
+            </thead>
+            <%= form_for @comment,html: {class: 'form-horizontal', role: 'form'} do |f| %>
+                <%= render 'shared/error_messages', :object => @comment %>
+                <tbody>
+                <tr>
+                  <th class="success">1</th>
+                  <th class="success">CPU性能</th>
+                  <td>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_one, 100 %><%= label_tag("优") %></span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_one, 80 %><%= label_tag("良") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_one, 60 %><%= label_tag("中") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_one, 40 %><%= label_tag("差") %> </span>
+                    <span style="margin-left: 10px" ><%= f.radio_button :item_one, 20 %><%= label_tag("极差") %> </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="success">2</th>
+                  <th class="success">内存性能</th>
+                  <td>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_two, 100 %><%= label_tag("优") %></span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_two, 80 %><%= label_tag("良") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_two, 60 %><%= label_tag("中") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_two, 40 %><%= label_tag("差") %> </span>
+                    <span style="margin-left: 10px" ><%= f.radio_button :item_two, 20 %><%= label_tag("极差") %> </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="success">3</th>
+                  <th class="success">显示性能</th>
+                  <td>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_three, 100 %><%= label_tag("优") %></span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_three, 80 %><%= label_tag("良") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_three, 60 %><%= label_tag("中") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_three, 40 %><%= label_tag("差") %> </span>
+                    <span style="margin-left: 10px" ><%= f.radio_button :item_three, 20 %><%= label_tag("极差") %> </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="success">4</th>
+                  <th class="success">硬盘I/O性能</th>
+                  <td>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_four, 100 %><%= label_tag("优") %></span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_four, 80 %><%= label_tag("良") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_four, 60 %><%= label_tag("中") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_four, 40 %><%= label_tag("差") %> </span>
+                    <span style="margin-left: 10px" ><%= f.radio_button :item_four, 20 %><%= label_tag("极差") %> </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="success">5</th>
+                  <th class="success">存储空间</th>
+                  <td>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_five, 100 %><%= label_tag("充足") %></span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_five, 75 %><%= label_tag("过量") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_five, 50 %><%= label_tag("吃紧") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_five, 25 %><%= label_tag("不足") %> </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="success">6</th>
+                  <th class="success">网络</th>
+                  <td>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_six, 100 %><%= label_tag("优") %></span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_six, 80 %><%= label_tag("良") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_six, 60 %><%= label_tag("中") %> </span>
+                    <span style="margin-left: 10px"><%= f.radio_button :item_six, 40 %><%= label_tag("差") %> </span>
+                    <span style="margin-left: 10px" ><%= f.radio_button :item_six, 20 %><%= label_tag("极差") %> </span>
+                  </td>
+                </tr>
+                </tbody>
+                </table>
+                <div class="control-group">
+                  <h4>操作系统评价：</h4>
+                </div>
+                <div class="control-group">
+                  <div class="controls2">
+                    <%= f.text_area :comment_advantage, class: 'form-control' %>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <h4>软件评价：</h4>
+                </div>
+                <div class="control-group">
+                  <div class="controls2">
+                    <%= f.text_area :comment_disadvantage, class: 'form-control' %>
+                  </div>
+                </div>
+                <h3></h3>
+                <div class="form-actions">
+                  <%if !@comment.commented? %>
+                      <%= f.submit "提交", :class => "btn btn-default btn-block" %>
+                      <%else%>
+                      <%= f.submit "修改", :class => "btn btn-default btn-block" %>
+                  <%end%>
+                      <%= link_to '取消', comments_path, :class => "btn btn-default btn-block" %>
+                </div>
+
+            <%end%>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var   getURL   =   window.location.href;
+  var   index     =   getURL.indexOf( "?reload=no ");
+  if   (  location.href.indexOf('#reloaded')==-1 && location.href.endsWith("edit") ){
+    location.href=location.href+"#reloaded"
+    location.reload()
+    setTimeout(function(){window.location.href=url},0)
+  }
+</script>

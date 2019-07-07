@@ -1,0 +1,36 @@
+﻿
+<div class="container fill-height">
+
+  <div class="row">
+
+    <!-- 轮播 -->
+    <div class="col-lg-12" style="padding-bottom: 0px;padding-top: 0px">
+    <div id="myCarousel" class="carousel slide">
+      <!-- 轮播（Carousel）指标 -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <!-- 轮播（Carousel）项目 -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <%= link_to image_tag("i.jpg",width: 1280 , height: 440), image_path("http://www.bmeonline.cn/")%>
+          <div class="carousel-caption">欢迎</div>
+        </div>
+        <div class="item">
+          <%= link_to image_tag("ii.jpg",width: 1280 , height: 440),  image_path("http://share.bmeonline.cn/")%>
+          <div class="carousel-caption">“三二一”总体布局</div>
+        </div>
+        <div class="item">
+          <%= link_to image_tag("iii.jpg",width: 1280 , height: 440), image_path("http://oj.bmeonline.cn/")%>
+          <div class="carousel-caption">云端开发，自动计算</div>
+        </div>
+      </div>
+      <!-- 轮播（Carousel）导航 -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+    </div>
+  </div>
+</div>
