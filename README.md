@@ -1,4 +1,4 @@
-beta版本已发布，IP地址见：http://www.bmeonline.cn/cloudselectip/
+beta版本已发布，IP地址（需内网）：http://www.bmeonline.cn/cloudselectip/
 # 环境
 Ubuntu16.04+ruby 2.2.4+rails 4.2.5.2+postgresql数据库+git
 # 安装
