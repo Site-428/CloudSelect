@@ -5,6 +5,7 @@ Ubuntu16.04+ruby 2.2.4+rails 4.2.5.2+postgresql数据库+git
 在终端（MacOS或Linux）中执行以下代码
 ```
 git clone http://share.bmeonline.cn/admin-and-development/CloudSelect
+source ~/.rvm/scripts/rvm
 cd CloudSelect
 bundle install
 rake db:migrate
