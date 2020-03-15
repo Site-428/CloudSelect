@@ -1,0 +1,74 @@
+﻿<nav class="navbar navbar-inverse navbar-fixed-top">
+
+<div class='container-fluid'>
+  
+    <div class="navbar-header">
+<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"> </span>
+    <span class="icon-bar"> </span>
+    <span class="icon-bar"> </span>
+  </button>
+      <%= link_to "BmeCloudSelect", root_path, class: 'navbar-brand' %>
+      <meta name="baidu-site-verification" content="qdNHcZPXQc" />
+      <script>
+          var _hmt = _hmt || [];
+          (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?c7a3c4ef4da84c124ec8580d317591d4";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(hm, s);
+          })();
+      </script>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-nav mr-auto">
+
+        <li class=<%= "active" if params[:controller]=="homes" %>> <%= link_to "主页", root_path %></li>
+        <li class=<%= "active" if params[:controller]=="notices" %>> <%= link_to "通知", notices_index_path %></li>
+        <% if student_logged_in? %>
+            <li class=<%= "active" if params[:controller]=="courses" %>> <%= link_to "我的预约", courses_path %></li>
+        <% elsif teacher_logged_in? %>
+            <li class=<%= "active" if params[:controller]=="courses" %>> <%= link_to "主机管理", courses_path %></li>
+        <% elsif admin_logged_in? %>
+            <li> <%= link_to "控制面板", rails_admin_path %></li>
+        <% end %>
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right mr-auto">
+
+        <% if current_user %>
+            <li>
+              <%= link_to edit_user_path(current_user) do %>
+                  <%= current_user.name %><span class="glyphicon glyphicon-user"></span>
+              <% end %>
+            </li>
+
+            <li>
+              <p class="navbar-text"><%= current_user.department %></p>
+            </li>
+
+            <li>
+              <%= link_to sessions_logout_path, method: :delete do %>
+                  退出 <span class="	glyphicon glyphicon-off"></span>
+              <% end %>
+            </li>
+
+        <% else %>
+
+            <li><%= link_to sessions_login_path do %>
+                  登陆 <span class="	glyphicon glyphicon-user"></span>
+              <% end %>
+            </li>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+

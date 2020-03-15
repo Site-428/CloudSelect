@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: 【用户名】
+  password: 【密码】
+  pool: 5
+
+development:
+  <<: *default
+  database: 【数据库URI】
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: 【数据库URI】
+
+production:
+  <<: *default
+  database: 【数据库URI】

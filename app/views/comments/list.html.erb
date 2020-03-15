@@ -1,0 +1,102 @@
+﻿<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <%= render "shared/sidenav" %>
+    </div>
+
+    <div class="col-sm-10">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">主机名称: <%=@course.name%></h3>
+        </div>
+        <div class="panel-body" >
+          <table class="table table-striped table-bordered ">
+            <thead>
+            <tr>
+              <th>评估内容</th>
+              <th>评分(平均值/人次)</th>
+              <th>评估内容</th>
+              <th>评分(平均值/人次)</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+              <th>CPU性能</th>
+              <td>
+                <%= @comments_score[0]%> / <%= @comments_count[0]%>
+              </td>
+              <th>内存性能</th>
+              <td>
+                <%= @comments_score[1] %> / <%= @comments_count[1]%>
+              </td>
+            </tr>
+            <tr>
+              <th>显示性能</th>
+              <td>
+                <%= @comments_score[2] %> / <%= @comments_count[2]%>
+              </td>
+              <th>硬盘I/O性能</th>
+              <td>
+                <%= @comments_score[3] %> / <%= @comments_count[3]%>
+              </td>
+            </tr>
+            <tr>
+              <th>存储空间</th>
+              <td>
+                <%= @comments_score[4] %> / <%= @comments_count[4]%>
+              </td>
+              <th>网络</th>
+              <td>
+                <%= @comments_score[5] %> / <%= @comments_count[5]%>
+              </td>
+            </tr>
+            <tr>
+              <th>综合得分为：</th>
+              <td>
+                <%= @comments_score_sum %>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="panel panel-primary filterable">
+            <div class="panel-heading btn_new">
+              操作系统评价：
+            </div>
+            <div class="table-responsive">
+              <table class="table table-striped" id="curriculum_table">
+                <tbody>
+                <% @comments.each do |comment| %>
+                    <% if !(comment.comment_advantage.nil?)%>
+                        <tr>
+                          <th><%= comment.comment_advantage %></th>
+                        </tr>
+                    <% end %>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel panel-primary filterable">
+            <div class="panel-heading btn_new">
+              软件评价：
+            </div>
+            <div class="table-responsive">
+              <table class="table table-striped" id="curriculum_table">
+                <tbody>
+                <% @comments.each do |comment| %>
+                    <% if !(comment.comment_disadvantage.nil?)%>
+                        <tr>
+                          <th><%= comment.comment_disadvantage %></th>
+                        </tr>
+                    <% end %>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
